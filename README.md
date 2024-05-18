@@ -10,4 +10,9 @@ JavaScript: Programming language used for the project.
 
 
 ## Check App Here
+
 [Link](refokus-clone-chi.vercel.app)
+
+
+## Sneak Peak
+![Screenshot](https://github.com/ubednama/Refokus-Clone/assets/61332446/9b6f3f56-84a2-4204-850d-c76ab1189ad6)
