@@ -51,7 +51,7 @@ const Work = () => {
         }))
       );
       currentIndex = (currentIndex + 1) % images.length;
-    }, 2000);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [images.length]);
