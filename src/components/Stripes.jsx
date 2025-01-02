@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Stripe from "./Stripe";
 
 const Stripes = () => {
@@ -29,10 +29,23 @@ const Stripes = () => {
     },
   ];
   return (
-    <div className="flex items-start mt-32">
-      {data.map((elem, index) => (
-        <Stripe val={elem} key={index} />
-      ))}
+    <div className="overflow-hidden mt-32">
+      <motion.div
+        className="flex"
+        initial={{ x: "0%" }}
+        animate={{ x: "-100%" }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop"}}>
+        {data.map((elem, index) => (
+          <Stripe val={elem} key={index} />
+        ))}
+        {data.map((elem, index) => (
+          <Stripe val={elem} key={`${index}-clone`} />
+        ))}
+      </motion.div>
     </div>
   );
 };

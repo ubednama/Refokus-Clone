@@ -1,16 +1,19 @@
-import React from "react";
+import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import { IoIosArrowRoundForward } from "react-icons/io";
+
 const Card = ({
   width,
   start,
   para,
-  hover = "none",
+  hover,
   heading,
   text,
   team = "",
 }) => {
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: '1.01', padding: "35px", boxShadow: "0px 0px 5px 0px rgba(255,255,255,0.1)" }}
       className={`${width} hover:${hover} min-h-[30rem] flex flex-col justify-between bg-zinc-800 p-5 rounded-xl`}
     >
       <div className="w-full">
@@ -36,8 +39,18 @@ const Card = ({
 
         {para && <p className="text-sm text-zinc-500 font-medium">{team}</p>}
       </div>
-    </div>
+    </motion.div>
   );
+};
+
+Card.propTypes = {
+  width: PropTypes.string.isRequired,
+  start: PropTypes.bool,
+  para: PropTypes.bool,
+  hover: PropTypes.string,
+  heading: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  team: PropTypes.string,
 };
 
 export default Card;

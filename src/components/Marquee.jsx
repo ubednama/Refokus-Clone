@@ -1,8 +1,8 @@
-import React from "react";
+import PropTypes from 'prop-types';
 
 const Marquee = ({ imagesUrls }) => {
   return (
-    <div className="w-full flex py-8 gap-20 whitespace-nowrap overflow-hidden">
+    <div style={{flex: '0 0 auto'}}  className="w-full flex py-8 gap-20 whitespace-nowrap">
       {imagesUrls.map((url, index) => (
         <img
           src={url}
@@ -21,6 +21,10 @@ const Marquee = ({ imagesUrls }) => {
       ))}
     </div>
   );
+}
+
+Marquee.propTypes = {
+  imagesUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Marquee;

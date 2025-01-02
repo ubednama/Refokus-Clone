@@ -1,5 +1,5 @@
-import React from "react";
-import Button from "./Button";
+import Button from "./ui/Button";
+import PropTypes from 'prop-types';
 
 const Product = ({ val, mover, count }) => {
   return (
@@ -21,6 +21,17 @@ const Product = ({ val, mover, count }) => {
       </div>
     </div>
   );
+};
+
+Product.propTypes = {
+  val: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    live: PropTypes.bool,
+    case: PropTypes.bool,
+  }).isRequired,
+  mover: PropTypes.func.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default Product;
