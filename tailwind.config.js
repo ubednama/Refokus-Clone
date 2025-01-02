@@ -4,7 +4,6 @@ export default {
   safelist: [
     'hover:bg-violet-500',
     'hover:none',
-    // Add other hover classes if needed
   ],
   theme: {
     extend: {
